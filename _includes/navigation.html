@@ -1,19 +1,11 @@
 <nav class="site-nav">
   <div class="container">
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <ul class="nav-links">
-      {% for item in site.navigation %}
-      <li>
-        <a href="{{ item.url | relative_url }}" 
-           {% if item.target %}target="{{ item.target }}"{% endif %}> 
-           {{ item.title }}
-        </a>
-      </li>
-      {% endfor %}
+      <li><a href="/">Home</a></li>
+      <li><a href="/research">Research</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/cv">CV</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
   </div>
 </nav>

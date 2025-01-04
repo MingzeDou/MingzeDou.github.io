@@ -334,3 +334,64 @@ h2 { font-size: var(--font-size-lg); }
     color: map-get($colors, 'primary');
   }
 }
+
+// Mobile menu toggle
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: map-get($spacing, 'sm');
+  cursor: pointer;
+  
+  @include respond-to('medium') {
+    display: block;
+  }
+  
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: map-get($colors, 'primary');
+    margin: 4px 0;
+    transition: $transition-duration ease;
+  }
+}
+
+// Improve nav for mobile
+.nav-links {
+  @include respond-to('medium') {
+    display: none;
+    
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+// Enhance dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #{map-get($colors, 'dark', 'background')};
+    --color-text: #{map-get($colors, 'dark', 'text')};
+    --color-border: #{map-get($colors, 'dark', 'border')};
+  }
+  
+  .site-nav a {
+    color: var(--color-text);
+    
+    &:hover {
+      color: lighten(map-get($colors, 'accent'), 15%);
+    }
+  }
+  
+  .menu-toggle span {
+    background-color: var(--color-text);
+  }
+}
+
+// Add smooth transition for dark mode
+body {
+  transition: 
+    background-color $transition-duration ease,
+    color $transition-duration ease;
+}
