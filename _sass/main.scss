@@ -13,10 +13,10 @@ $colors: (
   'accent': #0366d6,
   'border': #eee,
   'dark': (
-    'background': #1a1a1a,
-    'surface': #252525,
-    'border': #333,
-    'text': #fff
+    'background': #0d1117,
+    'surface': #161b22,
+    'border': #30363d,
+    'text': #c9d1d9
   )
 );
 
@@ -28,8 +28,8 @@ $spacing: (
   'xl': 4rem
 );
 
-$max-width: 800px;
-$border-radius: 4px;
+$max-width: 1200px;
+$border-radius: 8px;
 $transition-duration: 0.3s;
 
 // Mixins
@@ -69,6 +69,7 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color $transition-duration ease, color $transition-duration ease;
 }
 
 // Typography
@@ -99,142 +100,172 @@ h2 { font-size: var(--font-size-lg); }
   }
 }
 
-// Header
-.site-header {
+// Main Header & Navigation
+.main-header {
   background-color: map-get($colors, 'background');
-  padding: map-get($spacing, 'lg') 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   border-bottom: 1px solid map-get($colors, 'border');
-  transition: background-color $transition-duration ease;
-  
-  .site-title {
-    margin: 0;
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-  }
-  
-  .site-description {
-    margin: map-get($spacing, 'xs') 0 0;
-    color: map-get($colors, 'secondary');
+}
+
+.top-nav {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: map-get($spacing, 'md') map-get($spacing, 'lg');
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: map-get($colors, 'accent');
+    text-decoration: none;
+    
+    &:hover {
+      color: darken(map-get($colors, 'accent'), 10%);
+    }
   }
 }
 
-// Navigation
-.site-nav {
-  padding: map-get($spacing, 'md') 0;
-  border-bottom: 1px solid map-get($colors, 'border');
-  position: sticky;
-  top: 0;
-  background-color: map-get($colors, 'background');
-  z-index: 1000;
+.nav-menu {
+  display: flex;
+  gap: map-get($spacing, 'lg');
+  list-style: none;
+  margin: 0;
+  padding: 0;
   
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: map-get($spacing, 'lg');
-    
-    @include respond-to('medium') {
-      flex-direction: column;
-      gap: map-get($spacing, 'md');
-    }
-  }
-  
-  a {
+  .nav-link {
     color: map-get($colors, 'primary');
     text-decoration: none;
-    transition: color $transition-duration ease;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
     
-    @include hover-focus {
-      color: map-get($colors, 'accent');
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: map-get($colors, 'accent');
+      transform: scaleX(0);
+      transition: transform $transition-duration ease;
+    }
+    
+    &:hover:after,
+    &.active:after {
+      transform: scaleX(1);
     }
     
     &.active {
       color: map-get($colors, 'accent');
-      font-weight: 500;
     }
   }
 }
 
-// Projects Grid
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: map-get($spacing, 'lg');
+// Content Sections
+.name-title {
+  font-size: 2.5rem;
+  color: map-get($colors, 'accent');
+  margin-bottom: map-get($spacing, 'lg');
+  font-weight: 700;
+}
+
+.about {
+  margin-bottom: map-get($spacing, 'xl');
   
-  @include respond-to('small') {
-    grid-template-columns: 1fr;
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 }
 
-.project-card {
-  border: 1px solid map-get($colors, 'border');
-  border-radius: $border-radius;
-  padding: map-get($spacing, 'lg');
-  transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+.research-section,
+.projects-section {
+  margin-bottom: map-get($spacing, 'xl');
+}
+
+.research-list,
+.projects-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: map-get($spacing, 'lg');
   
-  @include hover-focus {
+  li {
+    padding: map-get($spacing, 'sm') 0;
+    font-size: 1.1rem;
+    
+    &:before {
+      content: "•";
+      color: map-get($colors, 'accent');
+      font-weight: bold;
+      margin-right: map-get($spacing, 'sm');
+    }
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  padding: map-get($spacing, 'sm') map-get($spacing, 'lg');
+  background-color: map-get($colors, 'accent');
+  color: white;
+  text-decoration: none;
+  border-radius: $border-radius;
+  transition: all $transition-duration ease;
+  font-weight: 500;
+  
+  &:hover {
+    background-color: darken(map-get($colors, 'accent'), 10%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.2);
+  }
+}
+
+// Quick Navigation Grid
+.quick-nav {
+  margin-top: map-get($spacing, 'xl');
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: map-get($spacing, 'lg');
+  margin-top: map-get($spacing, 'md');
+}
+
+.nav-card {
+  padding: map-get($spacing, 'lg');
+  background-color: #f6f8fa;
+  border-radius: $border-radius;
+  text-decoration: none;
+  color: inherit;
+  transition: all $transition-duration ease;
+  border: 1px solid map-get($colors, 'border');
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: map-get($colors, 'accent');
+    
+    h3 {
+      color: map-get($colors, 'accent');
+    }
   }
   
   h3 {
-    margin-top: 0;
+    margin: 0 0 map-get($spacing, 'sm') 0;
+    font-size: 1.25rem;
+    transition: color $transition-duration ease;
   }
   
-  .technologies {
-    margin: map-get($spacing, 'md') 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: map-get($spacing, 'xs');
-    
-    span {
-      background-color: #f6f8fa;
-      padding: map-get($spacing, 'xs') map-get($spacing, 'sm');
-      border-radius: $border-radius;
-      font-size: 0.9rem;
-    }
-  }
-}
-
-// Contact Page
-.contact-info {
-  margin: map-get($spacing, 'lg') 0;
-  
-  .contact-method {
-    margin-bottom: map-get($spacing, 'lg');
-    
-    h3 {
-      margin-bottom: map-get($spacing, 'xs');
-    }
-    
-    p {
-      margin: map-get($spacing, 'xs') 0;
-    }
-  }
-}
-
-// CV Page
-.cv-section {
-  margin-bottom: map-get($spacing, 'xl');
-  animation: fadeIn 0.6s ease-out;
-  
-  h2 {
-    border-bottom: 2px solid map-get($colors, 'accent');
-    padding-bottom: map-get($spacing, 'xs');
-  }
-  
-  .cv-item {
-    margin-bottom: map-get($spacing, 'lg');
-    
-    h3 {
-      margin-bottom: map-get($spacing, 'xs');
-    }
-    
-    .date {
-      color: map-get($colors, 'secondary');
-      font-size: 0.9rem;
-    }
+  p {
+    margin: 0;
+    color: map-get($colors, 'secondary');
+    font-size: 0.9rem;
   }
 }
 
@@ -243,7 +274,6 @@ h2 { font-size: var(--font-size-lg); }
   margin-top: map-get($spacing, 'xl');
   padding: map-get($spacing, 'lg') 0;
   border-top: 1px solid map-get($colors, 'border');
-  background-color: map-get($colors, 'background');
   
   .social-links {
     margin-top: map-get($spacing, 'md');
@@ -254,22 +284,10 @@ h2 { font-size: var(--font-size-lg); }
       color: map-get($colors, 'secondary');
       transition: color $transition-duration ease;
       
-      @include hover-focus {
+      &:hover {
         color: map-get($colors, 'accent');
       }
     }
-  }
-}
-
-// Animations
-@keyframes fadeIn {
-  from { 
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -280,24 +298,64 @@ h2 { font-size: var(--font-size-lg); }
     color: map-get($colors, 'dark', 'text');
   }
   
-  .site-header,
-  .site-nav,
-  .site-footer {
+  .main-header {
     background-color: map-get($colors, 'dark', 'surface');
     border-color: map-get($colors, 'dark', 'border');
   }
   
-  .project-card {
-    background-color: map-get($colors, 'dark', 'surface');
-    border-color: map-get($colors, 'dark', 'border');
+  .nav-menu .nav-link {
+    color: map-get($colors, 'dark', 'text');
     
-    .technologies span {
-      background-color: rgba(255, 255, 255, 0.1);
+    &:hover,
+    &.active {
+      color: lighten(map-get($colors, 'accent'), 15%);
     }
   }
   
-  a {
-    color: lighten(map-get($colors, 'accent'), 10%);
+  .nav-card {
+    background-color: map-get($colors, 'dark', 'surface');
+    border-color: map-get($colors, 'dark', 'border');
+    
+    p {
+      color: #8b949e;
+    }
+    
+    &:hover {
+      background-color: lighten(map-get($colors, 'dark', 'surface'), 5%);
+      border-color: map-get($colors, 'accent');
+    }
+  }
+  
+  .site-footer {
+    border-color: map-get($colors, 'dark', 'border');
+  }
+}
+
+// Mobile Responsiveness
+@media (max-width: map-get($breakpoints, 'medium')) {
+  .top-nav {
+    flex-direction: column;
+    padding: map-get($spacing, 'md');
+    
+    .brand-name {
+      margin-bottom: map-get($spacing, 'md');
+    }
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: map-get($spacing, 'md');
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-button {
+    display: block;
+    text-align: center;
   }
 }
 
@@ -318,7 +376,7 @@ h2 { font-size: var(--font-size-lg); }
 
 // Print styles
 @media print {
-  .site-nav,
+  .main-header,
   .site-footer,
   .skip-link {
     display: none;
@@ -332,232 +390,5 @@ h2 { font-size: var(--font-size-lg); }
   a {
     text-decoration: none;
     color: map-get($colors, 'primary');
-  }
-}
-
-// Mobile menu toggle
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  padding: map-get($spacing, 'sm');
-  cursor: pointer;
-  
-  @include respond-to('medium') {
-    display: block;
-  }
-  
-  span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: map-get($colors, 'primary');
-    margin: 4px 0;
-    transition: $transition-duration ease;
-  }
-}
-
-// Improve nav for mobile
-.nav-links {
-  @include respond-to('medium') {
-    display: none;
-    
-    &.active {
-      display: flex;
-    }
-  }
-}
-
-// Enhance dark mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #{map-get($colors, 'dark', 'background')};
-    --color-text: #{map-get($colors, 'dark', 'text')};
-    --color-border: #{map-get($colors, 'dark', 'border')};
-  }
-  
-  .site-nav a {
-    color: var(--color-text);
-    
-    &:hover {
-      color: lighten(map-get($colors, 'accent'), 15%);
-    }
-  }
-  
-  .menu-toggle span {
-    background-color: var(--color-text);
-  }
-}
-
-// Add smooth transition for dark mode
-body {
-  transition: 
-    background-color $transition-duration ease,
-    color $transition-duration ease;
-}
-
-// Add these styles to your existing SCSS file
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.name-title {
-  font-size: 2.5rem;
-  color: #0366d6;
-  margin-bottom: 2rem;
-  font-weight: 700;
-}
-
-.about {
-  margin-bottom: 3rem;
-  
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-}
-
-.research-section,
-.projects-section {
-  margin-bottom: 3rem;
-}
-
-.research-list,
-.projects-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 1.5rem;
-  
-  li {
-    padding: 0.5rem 0;
-    font-size: 1.1rem;
-    
-    &:before {
-      content: "•";
-      color: #0366d6;
-      font-weight: bold;
-      margin-right: 0.5rem;
-    }
-  }
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #0366d6;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  
-  &:hover {
-    background-color: darken(#0366d6, 10%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.2);
-  }
-}
-
-.quick-nav {
-  margin-top: 4rem;
-  
-  h2 {
-    margin-bottom: 1.5rem;
-  }
-}
-
-.nav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.nav-card {
-  padding: 1.5rem;
-  background-color: #f6f8fa;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
-  border: 1px solid #e1e4e8;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-color: #0366d6;
-    
-    h3 {
-      color: #0366d6;
-    }
-  }
-  
-  h3 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.25rem;
-    transition: color 0.3s ease;
-  }
-  
-  p {
-    margin: 0;
-    color: #666;
-    font-size: 0.9rem;
-  }
-}
-
-// Dark mode styles
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-  }
-  
-  .nav-card {
-    background-color: #161b22;
-    border-color: #30363d;
-    
-    p {
-      color: #8b949e;
-    }
-    
-    &:hover {
-      background-color: #1f2428;
-      border-color: #388bfd;
-      
-      h3 {
-        color: #388bfd;
-      }
-    }
-  }
-  
-  .cta-button {
-    background-color: #388bfd;
-    
-    &:hover {
-      background-color: darken(#388bfd, 10%);
-    }
-  }
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-  
-  .name-title {
-    font-size: 2rem;
-  }
-  
-  .nav-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .cta-button {
-    display: block;
-    text-align: center;
   }
 }

@@ -3,9 +3,23 @@ layout: default
 title: Home
 ---
 
-<div class="container">
-  <h1 class="name-title">Mingze Dou</h1>
+<!-- Add this top navigation section -->
+<header class="main-header">
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <a href="/" class="brand-name">Mingze Dou</a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="/" class="nav-link active">Home</a></li>
+      <li><a href="/research" class="nav-link">Research</a></li>
+      <li><a href="/projects" class="nav-link">Projects</a></li>
+      <li><a href="/cv" class="nav-link">CV</a></li>
+      <li><a href="/contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
+<div class="container">
   <section class="about">
     <h2>About Me</h2>
     <p>I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.</p>

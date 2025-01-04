@@ -15,7 +15,7 @@ Feel free to reach out to me through any of the following channels:
 ## Social & Professional
 - **GitHub**: [MingzeDou](https://github.com/MingzeDou)
 - **LinkedIn**: https://www.linkedin.com/in/mingze-dou-508466279/
-- **Twitter/X**: https://x.com/mingze_dou/following
+- **Twitter/X**: https://x.com/mingze_dou
 
 ## Academic Affiliation
 University of Copenhagen  
