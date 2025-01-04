@@ -194,7 +194,6 @@ description: Mingze Dou - Neuroscience researcher at University of Copenhagen, s
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  {% include header.html %}
   {% include navigation.html %}
 
   <main id="main-content" class="container">
