@@ -4,7 +4,6 @@ title: Home
 description: Mingze Dou - Neuroscience researcher at University of Copenhagen, specializing in neural data analysis and spatial navigation
 ---
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,7 +14,7 @@ description: Mingze Dou - Neuroscience researcher at University of Copenhagen, s
   <meta name="author" content="Mingze Dou">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@mingze_dou">
-  <title>{{ site.title }}</title>  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
   <meta property="og:title" content="Mingze Dou - Neuroscience Researcher">
