@@ -1,7 +1,6 @@
-<!-- footer.html -->
 <footer class="site-footer">
-  <div class="footer-container">
-    <p class="copyright">&copy; {{ site.time | date: '%Y' }} Mingze Dou. All rights reserved.</p>
+  <div class="container">
+    <p>&copy; {{ site.time | date: '%Y' }} Mingze Dou. All rights reserved.</p>
     <div class="social-links">
       <a href="https://github.com/MingzeDou" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/mingze-dou-508466279/" target="_blank" rel="noopener">LinkedIn</a>
@@ -9,70 +8,24 @@
       <a href="mailto:mingze.dou@sund.ku.dk">Email</a>
     </div>
   </div>
+
   <style>
     .site-footer {
-      margin-top: 3rem;
-      padding: 2rem 0;
-      background-color: #f8f9fa;
-      border-top: 1px solid #eee;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      text-align: center;
-    }
-
-    .copyright {
-      margin-bottom: 1rem;
-      color: #666;
+      margin-top: 3rem;  /* Add some space between main content and footer */
     }
 
     .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+      margin-top: 1rem;  /* Add space between copyright text and social links */
+      display: flex;  /* Arrange links horizontally */
+      justify-content: space-between; /* Distribute links evenly */
     }
 
     .social-links a {
-      color: #3498db;
-      text-decoration: none;
-      transition: color 0.3s ease;
+      margin-right: 1rem; /* Add space between social links */
     }
 
-    .social-links a:hover {
-      color: #2980b9;
-    }
-
-    @media (max-width: 768px) {
-      .footer-container {
-        padding: 0 1rem;
-      }
-
-      .social-links {
-        gap: 1rem;
-      }
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .site-footer {
-        background-color: #161b22;
-        border-color: #30363d;
-      }
-
-      .copyright {
-        color: #8b949e;
-      }
-
-      .social-links a {
-        color: #58a6ff;
-      }
-
-      .social-links a:hover {
-        color: #79b8ff;
-      }
+    .social-links a:last-child {
+      margin-right: 0;  /* Remove margin from the last link */
     }
   </style>
 </footer>
