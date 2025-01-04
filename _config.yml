@@ -1,17 +1,8 @@
 # Site settings
 title: Mingze Dou
-email: mingze.dou@sund.ku.dk
-description: >- 
-  Master's student in Neuroscience at the University of Copenhagen,
-  focusing on neural mechanisms of spatial navigation and memory.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://MingzeDou.github.io"
-
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+description: Master's student in Neuroscience at the University of Copenhagen, focusing on neural mechanism of spatial navigation and memory.
+url: https://mingzedou.github.io
+baseurl: ""
 
 # Navigation
 navigation:
@@ -25,3 +16,13 @@ navigation:
     url: /cv
   - title: Contact
     url: /contact
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+style: compressed # This is optional, but recommended for production
+sass_dir: _sass
