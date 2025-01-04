@@ -1,4 +1,10 @@
-# Mingze Dou
+---
+layout: default
+title: "Mingze Dou - Neuroscience Researcher"
+description: "Neuroscience researcher at University of Copenhagen, specializing in neural data analysis and spatial navigation"
+keywords: "neuroscience, neural data analysis, spatial navigation, University of Copenhagen, Mingze Dou"
+author: "Mingze Dou"
+---
 
 [Research](/research) &nbsp;&nbsp;|&nbsp;&nbsp; [Projects](/projects) &nbsp;&nbsp;|&nbsp;&nbsp; [CV](/cv) &nbsp;&nbsp;|&nbsp;&nbsp; [Contact](/contact)
 
