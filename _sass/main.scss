@@ -395,3 +395,169 @@ body {
     background-color $transition-duration ease,
     color $transition-duration ease;
 }
+
+// Add these styles to your existing SCSS file
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.name-title {
+  font-size: 2.5rem;
+  color: #0366d6;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.about {
+  margin-bottom: 3rem;
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+.research-section,
+.projects-section {
+  margin-bottom: 3rem;
+}
+
+.research-list,
+.projects-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  
+  li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    
+    &:before {
+      content: "•";
+      color: #0366d6;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #0366d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  
+  &:hover {
+    background-color: darken(#0366d6, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.2);
+  }
+}
+
+.quick-nav {
+  margin-top: 4rem;
+  
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.nav-card {
+  padding: 1.5rem;
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  border: 1px solid #e1e4e8;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: #0366d6;
+    
+    h3 {
+      color: #0366d6;
+    }
+  }
+  
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+  }
+  
+  p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
+
+// Dark mode styles
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+  }
+  
+  .nav-card {
+    background-color: #161b22;
+    border-color: #30363d;
+    
+    p {
+      color: #8b949e;
+    }
+    
+    &:hover {
+      background-color: #1f2428;
+      border-color: #388bfd;
+      
+      h3 {
+        color: #388bfd;
+      }
+    }
+  }
+  
+  .cta-button {
+    background-color: #388bfd;
+    
+    &:hover {
+      background-color: darken(#388bfd, 10%);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .name-title {
+    font-size: 2rem;
+  }
+  
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-button {
+    display: block;
+    text-align: center;
+  }
+}
