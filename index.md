@@ -1,132 +1,204 @@
----
-layout: default
-title: Home
----
-
-<nav class="top-nav">
-  <div class="nav-brand">
-    <a href="/" class="brand-name">Mingze Dou</a>
-  </div>
-  <ul class="nav-menu">
-    <li><a href="/" class="nav-link active">Home</a></li>
-    <li><a href="/research" class="nav-link">Research</a></li>
-    <li><a href="/projects" class="nav-link">Projects</a></li>
-    <li><a href="/cv" class="nav-link">CV</a></li>
-    <li><a href="/contact" class="nav-link">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mingze Dou</title>
-  <style>
-    /* Your CSS styles here */
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingze Dou</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .brand-name {
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            border-bottom-color: #3498db;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* Links */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        .quick-links {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .quick-links a {
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-nav {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-brand {
+                margin-bottom: 1rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="top-nav">
-    <div class="nav-brand">
-      <a href="/" class="brand-name">Mingze Dou</a>
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <a href="/" class="brand-name">Mingze Dou</a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/" class="nav-link active">Home</a></li>
+            <li><a href="/research" class="nav-link">Research</a></li>
+            <li><a href="/projects" class="nav-link">Projects</a></li>
+            <li><a href="/cv" class="nav-link">CV</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>About Me</h1>
+        <p>I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.</p>
+
+        <h2>Research Interests</h2>
+        <ul>
+            <li>Neural circuits and brain oscillations</li>
+            <li>Spatial navigation and memory</li>
+            <li>Neural data analysis and computational methods</li>
+            <li>Computational modeling</li>
+        </ul>
+        <p><a href="/research">Learn more about my research →</a></p>
+
+        <h2>Current Projects</h2>
+        <ul>
+            <li>Neural data analysis pipelines for high-density recordings, focusing on spatial memory</li>
+            <li>Documentation and resource development for brainSTEM platform, an electronic notebook for neuroscience</li>
+        </ul>
+        <p><a href="/projects">View my projects →</a></p>
+
+        <div class="quick-links">
+            <a href="/research">Research</a> |
+            <a href="/projects">Projects</a> |
+            <a href="/cv">CV</a> |
+            <a href="/contact">Contact</a>
+        </div>
     </div>
-    <ul class="nav-menu">
-      <li><a href="/" class="nav-link active">Home</a></li>
-      <li><a href="/research" class="nav-link">Research</a></li>
-      <li><a href="/projects" class="nav-link">Projects</a></li>
-      <li><a href="/cv" class="nav-link">CV</a></li>
-      <li><a href="/contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-
-  <div class="container">
-    <h1>About Me</h1>
-    <p>I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.</p>
-
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Neural circuits and oscillations</li>
-      <li>Spatial navigation and memory</li>
-      <li>Neural data analysis and computational methods</li>
-    </ul>
-    <p><a href="/research">Learn more about my research →</a></p>
-
-    <h2>Current Projects</h2>
-    <ul>
-      <li>Neural data analysis pipelines for high-density recordings</li>
-      <li>Bio-inspired neural networks for decision-making analysis</li>
-      <li>Development of brainSTEM platform</li>
-    </ul>
-    <p><a href="/projects">View my projects →</a></p>
-
-    <h2>Quick Links</h2>
-    <div class="quick-links">
-      <a href="/research">Research</a> |
-      <a href="/projects">Projects</a> |
-      <a href="/cv">CV</a> |
-      <a href="/contact">Contact</a>
-    </div>
-  </div>
-
 </body>
 </html>
-
-## Quick Links
-
-<div class="quick-links">
-  <a href="/research">Research</a> |
-  <a href="/projects">Projects</a> |
-  <a href="/cv">CV</a> |
-  <a href="/contact">Contact</a>
-</div>
-
-</div>
-
-<style>
-/* Basic styling */
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #f0f0f0;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu li {
-  margin-left: 20px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #333;
-}
-
-.nav-link.active {
-  font-weight: bold;
-}
-
-.container {
-  max-width: 960px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.quick-links {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.quick-links a {
-  text-decoration: none;
-  margin: 0 10px;
-  color: #007bff;
-}
-</style>
