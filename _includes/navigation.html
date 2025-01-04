@@ -1,9 +1,17 @@
+<!-- Update navigation.html -->
 <nav class="site-nav">
     <div class="container">
-        <ul>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
             {% for item in site.navigation %}
             <li>
-                <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>
+                <a href="{{ item.url | relative_url }}" 
+                   {% if page.url == item.url %}class="active"{% endif %}
+                   {% if item.target %}target="{{ item.target }}"{% endif %}>
                     {{ item.title }}
                 </a>
             </li>
