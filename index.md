@@ -3,67 +3,96 @@ layout: default
 title: Home
 ---
 
-<!-- Add this top navigation section -->
-<header class="main-header">
-  <nav class="top-nav">
-    <div class="nav-brand">
-      <a href="/" class="brand-name">Mingze Dou</a>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="/" class="nav-link active">Home</a></li>
-      <li><a href="/research" class="nav-link">Research</a></li>
-      <li><a href="/projects" class="nav-link">Projects</a></li>
-      <li><a href="/cv" class="nav-link">CV</a></li>
-      <li><a href="/contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<nav class="top-nav">
+  <div class="nav-brand">
+    <a href="/" class="brand-name">Mingze Dou</a>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="/" class="nav-link active">Home</a></li>
+    <li><a href="/research" class="nav-link">Research</a></li>
+    <li><a href="/projects" class="nav-link">Projects</a></li>
+    <li><a href="/cv" class="nav-link">CV</a></li>
+    <li><a href="/contact" class="nav-link">Contact</a></li>
+  </ul>
+</nav>
 
 <div class="container">
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.</p>
-  </section>
 
-  <section class="research-section">
-    <h2>Research Focus</h2>
-    <ul class="research-list">
-      <li>Neural circuits and oscillations</li>
-      <li>Spatial navigation and memory</li>
-      <li>Neural data analysis and computational methods</li>
-    </ul>
-    <a href="/research" class="cta-button">Read more about my research →</a>
-  </section>
+## About Me
 
-  <section class="projects-section">
-    <h2>Current Projects</h2>
-    <ul class="projects-list">
-      <li>Neural data analysis pipelines for high-density recordings</li>
-      <li>Bio-inspired neural networks for decision-making analysis</li>
-      <li>Development of brainSTEM platform</li>
-    </ul>
-    <a href="/projects" class="cta-button">View my projects →</a>
-  </section>
+I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.
 
-  <nav class="quick-nav">
-    <h2>Quick Links</h2>
-    <div class="nav-grid">
-      <a href="/research" class="nav-card">
-        <h3>Research</h3>
-        <p>Explore my research interests and publications</p>
-      </a>
-      <a href="/projects" class="nav-card">
-        <h3>Projects</h3>
-        <p>See my current work and implementations</p>
-      </a>
-      <a href="/cv" class="nav-card">
-        <h3>CV</h3>
-        <p>View my academic and professional background</p>
-      </a>
-      <a href="/contact" class="nav-card">
-        <h3>Contact</h3>
-        <p>Get in touch with me</p>
-      </a>
-    </div>
-  </nav>
+## Research Interests
+
+*   Neural circuits and oscillations
+*   Spatial navigation and memory
+*   Neural data analysis and computational methods
+
+[Learn more about my research →](/research)
+
+## Current Projects
+
+*   Neural data analysis pipelines for high-density recordings
+*   Bio-inspired neural networks for decision-making analysis
+*   Development of brainSTEM platform
+
+[View my projects →](/projects)
+
+## Quick Links
+
+<div class="quick-links">
+  <a href="/research">Research</a> |
+  <a href="/projects">Projects</a> |
+  <a href="/cv">CV</a> |
+  <a href="/contact">Contact</a>
 </div>
+
+</div>
+
+<style>
+/* Basic styling */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.quick-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.quick-links a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: #007bff;
+}
+</style>
