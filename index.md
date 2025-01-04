@@ -1,9 +1,29 @@
+---
+layout: default
+title: Home
+description: Mingze Dou - Neuroscience researcher at University of Copenhagen, specializing in neural data analysis and spatial navigation
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Mingze Dou - Neuroscience researcher at University of Copenhagen, specializing in neural data analysis and spatial navigation">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mingze Dou</title>
+    <meta name="keywords" content="neuroscience, neural data analysis, spatial navigation, University of Copenhagen">
+    <meta name="author" content="Mingze Dou">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@mingze_dou">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="{{ '/assets/css/main.css' | relative_url }}" as="style">
+    <meta property="og:title" content="Mingze Dou - Neuroscience Researcher">
+    <meta property="og:description" content="Research in neural data analysis and spatial navigation">
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:type" content="website">
+    {% seo %}
     <style>
         /* Reset and base styles */
         * {
@@ -16,6 +36,21 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 1em;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* Navigation */
@@ -160,20 +195,11 @@
     </style>
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="nav-brand">
-            <a href="/" class="brand-name">Mingze Dou</a>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="/" class="nav-link active">Home</a></li>
-            <li><a href="/research" class="nav-link">Research</a></li>
-            <li><a href="/projects" class="nav-link">Projects</a></li>
-            <li><a href="/cv" class="nav-link">CV</a></li>
-            <li><a href="/contact" class="nav-link">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include header.html %}
+    {% include navigation.html %}
+    
+    <main id="main-content" class="container">
         <h1>About Me</h1>
         <p>I'm a Master's student in Neuroscience at the University of Copenhagen, specializing in systems neuroscience and neural data analysis. With a background in Biomedical Engineering, I combine computational approaches with neuroscience to understand the neural basis of spatial navigation and memory.</p>
 
@@ -199,6 +225,8 @@
             <a href="/cv">CV</a> |
             <a href="/contact">Contact</a>
         </div>
-    </div>
+    </main>
+
+    {% include footer.html %}
 </body>
 </html>
