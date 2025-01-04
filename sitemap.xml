@@ -1,12 +1,15 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for page in site.pages %}
     <url>
-        <loc>{{ page.url | absolute_url }}</loc>
-        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <loc>https://your-domain.com/</loc>
+        <lastmod>2024-01-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
     </url>
-    {% endfor %}
+    <url>
+        <loc>https://your-domain.com/research</loc>
+        <lastmod>2024-01-04</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <!-- Add other pages -->
 </urlset>
