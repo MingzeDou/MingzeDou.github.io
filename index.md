@@ -1,9 +1,6 @@
 # Mingze Dou
 
-[Research](/research) |
-[Projects](/projects) |
-[CV](/cv) |
-[Contact](/contact)
+[Research](/research) &nbsp;&nbsp;|&nbsp;&nbsp; [Projects](/projects) &nbsp;&nbsp;|&nbsp;&nbsp; [CV](/cv) &nbsp;&nbsp;|&nbsp;&nbsp; [Contact](/contact)
 
 # About Me
 
@@ -27,16 +24,10 @@ I'm a Master's student in Neuroscience at the University of Copenhagen, speciali
 
 ## Quick Links
 
-[Research](/research) | 
-[Projects](/projects) | 
-[CV](/cv) | 
-[Contact](/contact)
+[Research](/research) &nbsp;&nbsp;|&nbsp;&nbsp; [Projects](/projects) &nbsp;&nbsp;|&nbsp;&nbsp; [CV](/cv) &nbsp;&nbsp;|&nbsp;&nbsp; [Contact](/contact)
 
 ---
 
 © 2025 Mingze Dou. All rights reserved.
 
-[GitHub](https://github.com/MingzeDou) |
-[LinkedIn](https://www.linkedin.com/in/mingze-dou-508466279/) |
-[Twitter](https://x.com/mingze_dou/following) |
-[Email](mailto:mingze.dou@sund.ku.dk)
+[GitHub](https://github.com/MingzeDou) &nbsp;&nbsp;|&nbsp;&nbsp; [LinkedIn](https://www.linkedin.com/in/mingze-dou-508466279/) &nbsp;&nbsp;|&nbsp;&nbsp; [Twitter](https://x.com/mingze_dou/following) &nbsp;&nbsp;|&nbsp;&nbsp; [Email](mailto:mingze.dou@sund.ku.dk)
