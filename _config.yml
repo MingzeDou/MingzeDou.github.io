@@ -1,0 +1,27 @@
+# Site settings
+title: Mingze Dou
+email: mingze.dou@sund.ku.dk
+description: >- 
+  Master's student in Neuroscience at the University of Copenhagen,
+  focusing on neural mechanisms of spatial navigation and memory.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://MingzeDou.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: Projects
+    url: /projects
+  - title: CV
+    url: /cv
+  - title: Contact
+    url: /contact
