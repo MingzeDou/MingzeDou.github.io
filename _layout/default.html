@@ -8,7 +8,7 @@
     <meta name="keywords" content="neuroscience, neural data analysis, spatial navigation, University of Copenhagen">
     <meta name="author" content="Mingze Dou">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:cwtor" content="@mingze_dou">
+    <meta name="twitter:creator" content="@mingze_dou">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,19 +16,17 @@
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta property="og:title" content="Mingze Dou - Neuroscience Researcher">
     <meta property="og:description" content="Research in neural data analysis and spatial navigation">
-    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:url" content="https://mingzedou.github.io">
     <meta property="og:type" content="website">
     {% seo %}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    {% include header.html %}
     {% include navigation.html %}
     
-    <main class="container">
+    <main id="main-content" class="container">
         {{ content }}
     </main>
-
     {% include footer.html %}
 </body>
 </html>
