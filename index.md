@@ -4,6 +4,10 @@ permalink: /
 layout: about
 title: Mingze Dou
 subtitle: Systems and Computational Neuroscientist & Software Developer
+description: >
+  Mingze Dou is a systems neuroscientist specializing in septo-hippocampal neural dynamics, 
+  high-density Neuropixels recording, computational data analysis, and machine learning 
+  applications in neuroscience research.
 
 profile:
   align: right

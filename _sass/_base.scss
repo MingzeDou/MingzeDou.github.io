@@ -215,6 +215,30 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
+/* Mobile profile improvements */
+@media (max-width: 575px) {
+  .profile {
+    width: 100% !important;
+    margin: 0 0 1.5rem 0 !important;
+    text-align: center;
+    float: none !important;
+    
+    img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+  .profile.float-right,
+  .profile.float-left {
+    margin: 0 0 1.5rem 0 !important;
+    float: none !important;
+  }
+}
+
 @media (min-width: 576px) {
   .profile {
     width: 30%;
