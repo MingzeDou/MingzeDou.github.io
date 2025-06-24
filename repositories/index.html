@@ -23,8 +23,7 @@
 <meta name="author" content="Mingze Dou">
 <meta name="description" content="A collection of my GitHub repositories and open-source contributions in neuroscience and data analysis.">
 
-  <meta name="keywords" content="Mingze Dou, neuroscience, computational neuroscience, systems neuroscience, Neuropixels,  septo-hippocampal system, neural circuits, machine learning, data analysis, Python, MATLAB,  BrainSTEM, spike sorting, electrophysiology, spatial memory, neural decoding, open science
-">
+  <meta name="keywords" content="neuroscience, computational neuroscience, electrophysiology, machine learning, neuropixels, hippocampus, septum, memory, spatial navigation, systems neuroscience, PhD, research, Copenhagen, BrainSTEM">
 
 
 
@@ -302,6 +301,13 @@
             
           
           
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" title="Search" onclick="openSearchModal()">
+                <span class="nav-link">ctrl k <i class="ti ti-search"></i></span>
+              </button>
+            </li>
+          
           
             <!-- Toogle theme mode -->
             <li class="toggle-container">
@@ -505,6 +511,9 @@
   crossorigin="anonymous"
 ></script>
 
+<!-- Mobile navbar fix -->
+<script src="/assets/js/navbar-mobile.js" type="text/javascript"></script>
+
 
   <!-- Masonry & imagesLoaded -->
   <script
@@ -616,6 +625,13 @@
   </script>
 
 
+
+  <!-- Search -->
+  <script type="module" src="/assets/js/search/ninja-keys.min.js"></script>
+  <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
+  <script src="/assets/js/search-setup.js"></script>
+  <script src="/assets/js/search-data.js"></script>
+  <script src="/assets/js/shortcut-key.js"></script>
 
 
 
