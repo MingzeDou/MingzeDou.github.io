@@ -1,65 +1,34 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Featured projects showcasing my work in neuroscience research and software development.
 nav: true
-nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+nav_order: 2
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+## Neuropixels Recording of Septo-Hippocampal Dynamics
+<span style="font-size:0.95em; color: #888;">Aug 2024 – Present</span>
 
-{% else %}
+An ongoing investigation into the neural dynamics of the septo-hippocampal circuit during naturalistic behavior, utilizing state-of-the-art, large-scale recording technology.
 
-<!-- Display projects without categories -->
+My role encompasses the entire scientific pipeline:
+- **Experimental Execution:** I engineered the dual-probe experimental setup and performed stereotaxic surgeries for probe implantation with my supervisor. I conduct the simultaneous Neuropixels 2.0 recordings from the medial septum and hippocampus in freely behaving rodents, acquiring massive, high-resolution datasets.
+- **Computational Pipeline & Analysis:** I developed the end-to-end analysis workflow in Python and MATLAB. This includes synchronizing neural data with behavioral tracking, performing spike sorting on high-channel-count data, and applying advanced analytical methods like dimensionality reduction and neural decoding to understand how circuit-level activity represents behavior.
 
-{% assign sorted_projects = site.projects | sort: "importance" %}
+**Skills:** Systems Neuroscience · Electrophysiology · Neuropixels · Digital Signal Processing · Population-Level Analysis
 
-  <!-- Generate cards for each project -->
+---
 
-{% if page.horizontal %}
+## BrainSTEM: A Collaborative Notebook for Neuroscience
+<span style="font-size:0.95em; color: #888;">Aug 2024 – Present</span>
 
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
-</div>
+An ongoing investigation into the neural dynamics of the septo-hippocampal circuit during naturalistic behavior, utilizing state-of-the-art, large-scale recording technology.
+
+My role encompasses the entire scientific pipeline:
+- **Experimental Execution:** I engineered the dual-probe experimental setup and performed stereotaxic surgeries for probe implantation with my supervisor. I conduct the simultaneous Neuropixels 2.0 recordings from the medial septum and hippocampus in freely behaving rodents, acquiring massive, high-resolution datasets.
+- **Computational Pipeline & Analysis:** I developed the end-to-end analysis workflow in Python and MATLAB. This includes synchronizing neural data with behavioral tracking, performing spike sorting on high-channel-count data, and applying advanced analytical methods like dimensionality reduction and neural decoding to understand how circuit-level activity represents behavior.
+
+<a href="https://brainstem.org" target="_blank">Visit BrainSTEM.org</a>
+
+**Skills:** Systems Neuroscience · Electrophysiology · Neuropixels · Digital Signal Processing · Population-Level Analysis
