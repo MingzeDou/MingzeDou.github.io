@@ -1,34 +1,47 @@
 ---
 layout: page
 permalink: /repositories/
-title: Repositories
-description: Selected GitHub repositories and open-source contributions.
+title: repositories
+description: A collection of my GitHub repositories and open-source contributions in neuroscience and data analysis.
 nav: true
 nav_order: 3
 ---
 
-## phy2-plugins
-<a href="https://github.com/petersenpeter/phy2-plugins" target="_blank">https://github.com/petersenpeter/phy2-plugins</a>
+{% if site.data.repositories.github_users %}
 
-*Description coming soon*
+## GitHub users
 
----
-
-## brainstem_support
-<a href="https://github.com/brainstem-org/brainstem_support" target="_blank">https://github.com/brainstem-org/brainstem_support</a>
-
-*Description coming soon*
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for user in site.data.repositories.github_users %}
+    {% include repository/repo_user.liquid username=user %}
+  {% endfor %}
+</div>
 
 ---
 
-## kilosort4Wrapper
-<a href="https://github.com/petersen-lab/kilosort4Wrapper" target="_blank">https://github.com/petersen-lab/kilosort4Wrapper</a>
+{% if site.repo_trophies.enabled %}
+{% for user in site.data.repositories.github_users %}
+{% if site.data.repositories.github_users.size > 1 %}
 
-*Description coming soon*
+  <h4>{{ user }}</h4>
+  {% endif %}
+  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% include repository/repo_trophies.liquid username=user %}
+  </div>
 
 ---
 
-## LFP-extraction-electrophysiology
-<a href="https://github.com/MingzeDou/LFP-extraction-electrophysiology" target="_blank">https://github.com/MingzeDou/LFP-extraction-electrophysiology</a>
+{% endfor %}
+{% endif %}
+{% endif %}
 
-*Description coming soon*
+{% if site.data.repositories.github_repos %}
+
+## GitHub Repositories
+
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for repo in site.data.repositories.github_repos %}
+    {% include repository/repo.liquid repository=repo %}
+  {% endfor %}
+</div>
+{% endif %}

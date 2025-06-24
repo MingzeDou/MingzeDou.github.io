@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - MingzeDou
 
-repo_description_lines_max: 2
+repo_description_lines_max: 3
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - petersenpeter/phy2-plugins
+  - brainstem-org/brainstem_support
+  - petersen-lab/kilosort4Wrapper
+  - MingzeDou/LFP-extraction-electrophysiology
