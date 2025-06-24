@@ -1,0 +1,10 @@
+github_users:
+  - MingzeDou
+
+repo_description_lines_max: 3
+
+github_repos:
+  - petersenpeter/phy2-plugins
+  - brainstem-org/brainstem_support
+  - petersen-lab/kilosort4Wrapper
+  - MingzeDou/LFP-extraction-electrophysiology
