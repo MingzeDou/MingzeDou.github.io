@@ -215,30 +215,6 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
-/* Mobile profile improvements */
-@media (max-width: 575px) {
-  .profile {
-    width: 100% !important;
-    margin: 0 0 1.5rem 0 !important;
-    text-align: center;
-    float: none !important;
-    
-    img {
-      max-width: 200px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-  
-  .profile.float-right,
-  .profile.float-left {
-    margin: 0 0 1.5rem 0 !important;
-    float: none !important;
-  }
-}
-
 @media (min-width: 576px) {
   .profile {
     width: 30%;
@@ -247,6 +223,29 @@ ul.task-list input[type="checkbox"] {
       p {
         display: block;
       }
+    }
+  }
+}
+
+// Mobile profile fixes
+@media (max-width: 575.98px) {
+  .profile {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    
+    &.float-right,
+    &.float-left {
+      float: none;
+      margin: 0 auto 2rem auto;
+    }
+    
+    img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
   }
 }
@@ -272,6 +271,34 @@ ul.task-list input[type="checkbox"] {
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
   opacity: 0.95;
+  position: relative;
+  z-index: 1000;
+}
+
+// Mobile navbar fixes
+@media (max-width: 575.98px) {
+  .navbar-toggler {
+    margin-right: 0;
+    padding: 0.25rem 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--global-bg-color);
+    border-top: 1px solid var(--global-divider-color);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .navbar .dropdown-menu {
@@ -368,19 +395,22 @@ ul.task-list input[type="checkbox"] {
 }
 
 .navbar-toggler {
-  /* Ensure proper touch interaction on mobile */
-  position: relative;
-  z-index: 9999;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.25rem;
+  position: relative;
+  z-index: 1001;
   cursor: pointer;
-  /* Improve touch target size */
-  min-width: 44px;
-  min-height: 44px;
+  
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
   
   .icon-bar {
     display: block;
@@ -390,6 +420,7 @@ ul.task-list input[type="checkbox"] {
     border-radius: 1px;
     margin-bottom: 4px;
     transition: all 0.2s;
+    pointer-events: none;
   }
 
   .top-bar {
@@ -405,17 +436,6 @@ ul.task-list input[type="checkbox"] {
     transform: rotate(-45deg);
     transform-origin: 10% 90%;
   }
-  
-  /* Ensure clickable area covers entire button */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
 }
 
 .navbar-toggler.collapsed {
@@ -429,32 +449,6 @@ ul.task-list input[type="checkbox"] {
 
   .bottom-bar {
     transform: rotate(0);
-  }
-}
-
-/* Ensure navbar collapse works properly on mobile */
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--global-bg-color);
-    border-top: 1px solid var(--global-divider-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    
-    .navbar-nav {
-      padding: 1rem 0;
-    }
-    
-    .nav-item {
-      text-align: center;
-      
-      .nav-link {
-        padding: 0.75rem 1rem;
-      }
-    }
   }
 }
 
@@ -803,9 +797,6 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
-
-      .preview {
-      }
 
       .abbr {
         margin-bottom: 0.5rem;

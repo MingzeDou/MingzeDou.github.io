@@ -4,21 +4,17 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Mingze
-middle_name:
+middle_name: 
 last_name: Dou
 contact_note: >
   Feel free to reach out via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal website of Mingze Dou - Systems and Computational Neuroscientist specializing in septo-hippocampal dynamics, 
-  Neuropixels recording, neural data analysis, and machine learning applications in neuroscience research.
+  Systems and Computational Neuroscientist & Software Developer. Exploring neural circuits using high-density electrophysiology and machine learning. PhD student at University of Copenhagen researching septo-hippocampal dynamics and memory systems.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: >
-  Mingze Dou, neuroscience, computational neuroscience, systems neuroscience, Neuropixels, 
-  septo-hippocampal system, neural circuits, machine learning, data analysis, Python, MATLAB, 
-  BrainSTEM, spike sorting, electrophysiology, spatial memory, neural decoding, open science
+keywords: neuroscience, computational neuroscience, electrophysiology, machine learning, neuropixels, hippocampus, septum, memory, spatial navigation, systems neuroscience, PhD, research, Copenhagen, BrainSTEM # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -52,7 +48,7 @@ repo_trophies:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: false
+search_enabled: true
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -188,8 +184,6 @@ exclude:
   - INSTALL.md
   - LICENSE
   - lighthouse_results/
-  - node_modules/
-  - readme_preview/
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
@@ -201,28 +195,25 @@ keep_files:
   - CNAME
   - .nojekyll
 
-# Plug-ins (GitHub Pages compatible only)
+# Plug-ins
 plugins:
-  # GitHub Pages officially supported plugins
+  - jekyll-archives-v2
+  - jekyll-email-protect
   - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll/scholar
   - jekyll-sitemap
+  - jekyll-tabs
+  - jekyll-terser
+  - jekyll-toc
+  - jekyll-twitter-plugin
   - jemoji
-
-  # Other plugins disabled for GitHub Pages compatibility
-  # - jekyll-archives-v2
-  # - jekyll-email-protect
-  # - jekyll-get-json
-  # - jekyll-imagemagick
-  # - jekyll-jupyter-notebook
-  # - jekyll-link-attributes
-  # - jekyll-minifier
-  # - jekyll-paginate-v2
-  # - jekyll-regex-replace
-  # - jekyll/scholar
-  # - jekyll-tabs
-  # - jekyll-terser
-  # - jekyll-toc
-  # - jekyll-twitter-plugin
 
 # Sitemap settings
 defaults:
@@ -356,7 +347,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: false # disable for GitHub Pages compatibility
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
     - 480
     - 800
