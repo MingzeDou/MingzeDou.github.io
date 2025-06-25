@@ -1,33 +1,57 @@
-// Navbar mobile fix
+// Enhanced mobile navbar fix
 $(document).ready(function() {
-  // Ensure navbar toggler works on mobile
-  $('.navbar-toggler').on('click', function(e) {
+  console.log('Mobile navbar script loaded');
+  
+  // Force navbar toggler to work on mobile
+  $('.navbar-toggler').off('click').on('click touchstart', function(e) {
     e.preventDefault();
-    const target = $(this).attr('data-target');
-    const $target = $(target);
+    e.stopPropagation();
     
-    if ($target.hasClass('show')) {
-      $target.removeClass('show');
-      $(this).attr('aria-expanded', 'false').addClass('collapsed');
+    console.log('Navbar toggler clicked');
+    
+    const $toggler = $(this);
+    const target = $toggler.attr('data-target') || '#navbarNav';
+    const $collapse = $(target);
+    
+    // Toggle the collapse
+    if ($collapse.hasClass('show')) {
+      $collapse.removeClass('show').addClass('collapse');
+      $toggler.addClass('collapsed').attr('aria-expanded', 'false');
     } else {
-      $target.addClass('show');
-      $(this).attr('aria-expanded', 'true').removeClass('collapsed');
+      $collapse.addClass('show').removeClass('collapse');
+      $toggler.removeClass('collapsed').attr('aria-expanded', 'true');
     }
   });
   
-  // Close mobile menu when clicking outside
-  $(document).on('click', function(e) {
-    if (!$(e.target).closest('.navbar').length) {
-      $('.navbar-collapse').removeClass('show');
-      $('.navbar-toggler').attr('aria-expanded', 'false').addClass('collapsed');
-    }
-  });
-  
-  // Close mobile menu when clicking on menu items
+  // Close menu when clicking menu items on mobile
   $('.navbar-nav .nav-link').on('click', function() {
-    if (window.innerWidth < 576) {
-      $('.navbar-collapse').removeClass('show');
-      $('.navbar-toggler').attr('aria-expanded', 'false').addClass('collapsed');
+    if ($(window).width() < 768) {
+      const $collapse = $('.navbar-collapse');
+      const $toggler = $('.navbar-toggler');
+      
+      $collapse.removeClass('show').addClass('collapse');
+      $toggler.addClass('collapsed').attr('aria-expanded', 'false');
     }
+  });
+  
+  // Close menu when clicking outside
+  $(document).on('click touchstart', function(e) {
+    if (!$(e.target).closest('.navbar').length) {
+      const $collapse = $('.navbar-collapse');
+      const $toggler = $('.navbar-toggler');
+      
+      if ($collapse.hasClass('show')) {
+        $collapse.removeClass('show').addClass('collapse');
+        $toggler.addClass('collapsed').attr('aria-expanded', 'false');
+      }
+    }
+  });
+  
+  // Ensure proper touch events
+  $('.navbar-toggler').css({
+    'touch-action': 'manipulation',
+    '-webkit-touch-callout': 'none',
+    '-webkit-user-select': 'none',
+    'user-select': 'none'
   });
 });
