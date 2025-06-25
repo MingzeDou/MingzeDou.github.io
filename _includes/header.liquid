@@ -14,9 +14,7 @@
               {{- site.middle_name -}}
             {% endif %}
             {% if site.last_name %}
-              <span class="font-weight-bold">
-                {{- site.last_name -}}
-              </span>
+              {{- site.last_name -}}
             {% endif %}
           {% else %}
             {{- site.title -}}
@@ -26,23 +24,9 @@
         <!-- Social Icons -->
         <div class="navbar-brand social">{% include social.liquid %}</div>
       {% endif %}
-      <!-- Navbar Toggle -->
-      <button
-        class="navbar-toggler collapsed ml-auto"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar top-bar"></span>
-        <span class="icon-bar middle-bar"></span>
-        <span class="icon-bar bottom-bar"></span>
-      </button>
 
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
+      <!-- Desktop Navigation -->
+      <div class="navbar-collapse d-none d-sm-flex text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           {% for page in site.pages %}
             {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
@@ -137,6 +121,42 @@
               </button>
             </li>
           {% endif %}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation - Always Visible -->
+    <div class="container d-sm-none">
+      <div class="mobile-nav-container">
+        <ul class="mobile-nav">
+          {% for page in site.pages %}
+            {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
+          {% endfor %}
+
+          <!-- About -->
+          <li class="mobile-nav-item {% if page.permalink == '/' %}active{% endif %}">
+            <a class="mobile-nav-link" href="{{ '/' | relative_url }}">{{- about_title }}</a>
+          </li>
+
+          <!-- Other pages -->
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for p in sorted_pages %}
+            {% if p.nav and p.autogen == null %}
+              {% unless p.dropdown %}
+                {% assign parent_link = p.permalink | remove: 'index.html' %}
+                <li class="mobile-nav-item {% if page.url contains parent_link %}active{% endif %}">
+                  {%- if p.permalink contains '://' -%}
+                    {%- assign url = p.permalink -%}
+                  {%- elsif p.permalink contains '/blog/' -%}
+                    {%- assign url = '/blog/' -%}
+                  {%- else -%}
+                    {%- assign url = p.url -%}
+                  {%- endif %}
+                  <a class="mobile-nav-link" href="{{ url | relative_url }}">{{- p.title }}</a>
+                </li>
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
         </ul>
       </div>
     </div>
