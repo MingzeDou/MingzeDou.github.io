@@ -57,10 +57,10 @@ Collaborated in developing BrainSTEM, an online neuroscience notebook aimed at p
 
 **Developer Experience & Documentation:**
 - Authored comprehensive technical documentation covering system architecture, API endpoints, and deployment procedures
-- Created interactive tutorials and code examples demonstrating best practices for reproducible computational neuroscience workflows
+- Created interactive tutorials and API usage code examples demonstrating best practices for reproducible computational neuroscience workflows
 
 **Platform Architecture & Database Engineering:**
-- Participated in designing core data models, implementing robust relational database schemas supporting complex neuroscience metadata and experimental hierarchies
+- Participated in developing core data models, implementing robust relational database schemas supporting complex neuroscience metadata and experimental hierarchies
 - Engineered scalable batch-processing tools enabling researchers to onboard entire experimental datasets through streamlined CSV upload workflows
 
 <a href="https://brainstem.org" target="_blank">Visit BrainSTEM.org</a>
