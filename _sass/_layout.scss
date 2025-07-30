@@ -6,6 +6,9 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   h1,
   h2,
@@ -29,25 +32,123 @@ body.sticky-bottom-footer {
 
 .container {
   max-width: $max-content-width;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 // Profile
 .profile {
   img {
     width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
-// TODO: redefine content layout.
+// Content sections
+.content-section {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
 
-/******************************************************************************
- * Publications
- ******************************************************************************/
+// Projects layout
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-// TODO: redefine publications layout.
+.project-card {
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
-/*****************************************************************************
-* Projects
-*****************************************************************************/
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
 
-// TODO: redefine projects layout.
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--global-theme-color);
+  }
+
+  .project-description {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .project-meta {
+    font-size: 0.875rem;
+    color: var(--global-text-color-light);
+    margin-bottom: 1rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+// Publications layout
+.publications-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.publication-card {
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .publication-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-authors {
+    color: var(--global-text-color-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-venue {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 0 0.5rem;
+  }
+}

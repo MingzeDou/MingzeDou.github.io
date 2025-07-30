@@ -19,24 +19,28 @@ table.table-cv {
 a.btncv {
   color: var(--global-text-color) !important;
   border: 1px solid var(--global-text-color) !important;
-  border-radius: 0.125rem;
+  border-radius: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.7rem;
   text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 a.btncv:hover {
   color: var(--global-theme-color) !important;
   border-color: var(--global-theme-color) !important;
+  background-color: rgba(var(--global-theme-color), 0.1);
   text-decoration: none !important;
+  transform: translateY(-2px);
 }
 
 /*****************************
@@ -46,6 +50,7 @@ a.btncv:hover {
 p.location {
   font-size: 0.7rem;
   white-space: nowrap;
+  color: var(--global-text-color-light);
 }
 
 i.iconlocation {
@@ -81,6 +86,7 @@ div.container-links {
   justify-content: flex-start;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  gap: 0.5rem;
 }
 
 /*****************************
@@ -105,6 +111,7 @@ div.list-groups {
   justify-content: flex-start;
   flex-direction: row;
   align-content: center;
+  gap: 2rem;
 }
 
 div.list-group {
@@ -113,11 +120,24 @@ div.list-group {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
+  background-color: var(--global-card-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 250px;
+}
+
+div.list-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 td.list-group-category {
   color: var(--global-theme-color);
   margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 td.list-group-category-icon {
@@ -129,22 +149,26 @@ td.list-group-category-icon {
 
 td.list-group-name {
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
 td.list-group-level {
   font-size: 0.8rem;
   padding-left: 0.5rem;
+  color: var(--global-text-color-light);
 }
 
 td.list-group-school {
   font-size: 0.7rem;
   padding-left: 0.5rem;
   text-align: center;
+  color: var(--global-text-color-light);
 }
 
 p.list-group-time {
   font-size: 0.7rem;
   padding-left: 0.5rem;
+  color: var(--global-text-color-light);
 }
 
 td.list-group-link {
@@ -172,26 +196,41 @@ ul.timeline li {
   min-height: 2.2rem;
   color: var(--global-text-color);
   list-style-position: inside;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 span.badge-toc {
   color: var(--global-bg-color);
   background-color: var(--global-theme-color);
-  border-radius: 0.125rem;
-  padding: 0.125rem 0.5rem 0.125rem 0.5rem;
-  font-weight: 700 !important;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 600 !important;
   display: inline-block;
   inline-size: fit-content;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 ul.timeline li::before {
   content: "";
   min-height: 2.5rem;
-  width: 1px;
-  background: var(--global-text-color);
+  width: 2px;
+  background: var(--global-divider-color);
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 2px;
-  top: -0.5rem;
+  left: 0;
+  top: 0.5rem;
+}
+
+ul.timeline li::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: var(--global-theme-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  top: 0.75rem;
 }

@@ -44,6 +44,12 @@
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 {% endif %}
 
+<!-- Additional SEO metadata -->
+<meta name="robots" content="index, follow">
+<meta name="language" content="{{ site.lang }}">
+<meta name="revisit-after" content="7 days">
+<link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
+
 {% assign is_blog_post = false %}
 {% if page.url != '/blog/index.html' and page.url contains '/blog/' %}
   {% unless page.url contains '/tag/' or page.url contains '/category/' %}
@@ -60,11 +66,21 @@
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ author_name }}">
   {% endif %}
   <meta property="og:locale" content="{{ site.lang }}">
+  {% if is_blog_post %}
+    <meta property="article:author" content="{{ author_name }}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    {% if page.last_updated %}
+      <meta property="article:modified_time" content="{{ page.last_updated | date_to_xmlschema }}">
+    {% endif %}
+  {% endif %}
 
   <!-- Twitter card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
@@ -222,20 +238,53 @@
 
   <script type="application/ld+json">
     {
-        "author":
-        {
-            "@type": "Person",
-            "name": "{{ author_name }}"
-        },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+        "@context": "https://schema.org",
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
+        "name": "{{ author_name }}",
+        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
         "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
         "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks }},
+        "author": {
+            "@type": "Person",
+            "name": "{{ author_name }}",
+            {% if sameaslinks != blank %}
+            "sameAs": {{ sameaslinks }}
+            {% endif %}
+        },
+        {% if is_blog_post %}
+        "datePublished": "{{ page.date | date_to_xmlschema }}",
+        {% if page.last_updated %}
+        "dateModified": "{{ page.last_updated | date_to_xmlschema }}",
         {% endif %}
-        "name": "{{ author_name }}",
-        "@context": "https://schema.org"
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}"
+        },
+        {% endif %}
+        {% if page.og_image or site.og_image %}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}",
+            "width": 1200,
+            "height": 630
+        },
+        {% endif %}
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ author_name }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{% if site.og_image %}{{ site.og_image }}{% else %}{{ site.url }}/assets/img/prof_pic.jpg{% endif %}"
+            }
+        },
+        "inLanguage": "{{ site.lang }}",
+        "potentialAction": {
+            "@type": "ReadAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}"
+            }
+        }
     }
   </script>
 {% endif %}

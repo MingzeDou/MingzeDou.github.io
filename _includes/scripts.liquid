@@ -30,8 +30,8 @@
   <script defer src="{{ '/assets/js/masonry.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Mermaid and D3 (conditionally loaded) -->
 {% if page.mermaid and page.mermaid.enabled %}
-  <!-- Mermaid and D3 -->
   <script
     defer
     src="{{ site.third_party_libraries.mermaid.url.js }}"
@@ -49,9 +49,8 @@
   <script defer src="{{ '/assets/js/mermaid-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Diff2HTML (conditionally loaded) -->
 {% if page.code_diff %}
-  <!-- Diff2HTML -->
-  <!-- diff2html doesn't go well with Bootstrap Table -->
   <script
     src="{{ site.third_party_libraries.diff2html.url.js }}"
     integrity="{{ site.third_party_libraries.diff2html.integrity.js }}"
@@ -60,8 +59,8 @@
   <script defer src="{{ '/assets/js/diff2html-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Leaflet (conditionally loaded) -->
 {% if page.map %}
-  <!-- Leaflet -->
   <script
     src="{{ site.third_party_libraries.leaflet.url.js }}"
     integrity="{{ site.third_party_libraries.leaflet.integrity.js }}"
@@ -70,8 +69,8 @@
   <script defer src="{{ '/assets/js/leaflet-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Chart.js (conditionally loaded) -->
 {% if page.chart and page.chart.chartjs %}
-  <!-- Chart.js -->
   <script
     defer
     src="{{ site.third_party_libraries.chartjs.url.js }}"
@@ -81,8 +80,8 @@
   <script defer src="{{ '/assets/js/chartjs-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- ECharts (conditionally loaded) -->
 {% if page.chart and page.chart.echarts %}
-  <!-- ECharts -->
   <script
     src="{{ site.third_party_libraries.echarts.url.js.library }}"
     integrity="{{ site.third_party_libraries.echarts.integrity.js.library }}"
@@ -98,8 +97,8 @@
   <script defer src="{{ '/assets/js/echarts-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Plotly (conditionally loaded) -->
 {% if page.chart and page.chart.plotly %}
-  <!-- Plotly -->
   <script
     defer
     src="{{ site.third_party_libraries.plotly.url.js }}"
@@ -109,8 +108,8 @@
   <script defer src="{{ '/assets/js/plotly-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Vega (conditionally loaded) -->
 {% if page.chart and page.chart.vega_lite %}
-  <!-- Vega -->
   <script
     defer
     src="{{ site.third_party_libraries.vega.url.js }}"
@@ -132,8 +131,8 @@
   <script defer src="{{ '/assets/js/vega-setup.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
+<!-- Tikzjax (conditionally loaded) -->
 {% if page.tikzjax %}
-  <!-- Tikzjax -->
   <script
     defer
     src="https://tikzjax.com/v1/tikzjax.js"
@@ -142,18 +141,18 @@
   ></script>
 {% endif %}
 
+<!-- Typograms (conditionally loaded) -->
 {% if page.typograms %}
-  <!-- Typograms -->
   <script src="{{ '/assets/js/typograms.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+<!-- Tooltips (conditionally loaded) -->
 {% if site.enable_tooltips %}
-  <!-- Tooltips -->
   <script src="{{ '/assets/js/tooltips-setup.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+<!-- Medium Zoom JS (conditionally loaded) -->
 {% if site.enable_medium_zoom %}
-  <!-- Medium Zoom JS -->
   <script
     defer
     src="{{ site.third_party_libraries.medium_zoom.url.js }}"
@@ -163,8 +162,8 @@
   <script defer src="{{ '/assets/js/zoom.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+<!-- Sidebar Table of Contents (conditionally loaded) -->
 {% if page.toc and page.toc.sidebar %}
-  <!-- Sidebar Table of Contents -->
   <script defer src="{{ '/assets/js/bootstrap-toc.min.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
@@ -179,12 +178,12 @@
   ></script>
 {% endif %}
 
-<!-- Load Common JS -->
+<!-- Load Critical JS -->
 <script src="{{ '/assets/js/no_defer.js' | relative_url | bust_file_cache }}"></script>
 <script defer src="{{ '/assets/js/common.js' | relative_url | bust_file_cache }}"></script>
-<script defer src="{{ '/assets/js/copy_code.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 
-<!-- Jupyter Open External Links New Tab -->
+<!-- Load Non-Critical JS -->
+<script defer src="{{ '/assets/js/copy_code.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
 
 <!-- Badges -->
@@ -223,9 +222,8 @@
   {% endunless %}
 {% endif %}
 
+<!-- Analytics (conditionally loaded) -->
 {% if site.enable_google_analytics %}
-  <!-- Analytics -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -233,14 +231,13 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', '{{ site.google_analytics }}');
   </script>
   <script defer src="{{ '/assets/js/google-analytics-setup.js' | relative_url }}"></script>
 {% endif %}
 
+<!-- Analytics (conditionally loaded) -->
 {% if site.enable_cronitor_analytics %}
-  <!-- Cronitor RUM -->
   <script async src="https://rum.cronitor.io/script.js"></script>
   <script defer src="{{ '/assets/js/cronitor-analytics-setup.js' | relative_url }}"></script>
 {% endif %}
@@ -257,8 +254,8 @@
   <script async defer src="https://openpanel.dev/op1.js"></script>
 {% endif %}
 
+<!-- Scrolling Progress Bar (conditionally loaded) -->
 {% if site.enable_progressbar %}
-  <!-- Scrolling Progress Bar -->
   <script defer src="{{ '/assets/js/progress-bar.js' | relative_url | bust_file_cache }}" type="text/javascript"></script>
 {% endif %}
 
@@ -309,21 +306,21 @@
   {% endif %}
 {% endif %}
 
+<!-- Jekyll Tabs (conditionally loaded) -->
 {% if page.tabs %}
-  <!-- Jekyll Tabs -->
   <script src="{{ '/assets/js/tabs.min.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+<!-- Back to Top (conditionally loaded) -->
 {% if site.back_to_top %}
-  <!-- Back to Top -->
   <script src="{{ '/assets/js/vanilla-back-to-top.min.js' | relative_url | bust_file_cache }}"></script>
   <script>
     addBackToTop();
   </script>
 {% endif %}
 
+<!-- Search (conditionally loaded) -->
 {% if site.search_enabled %}
-  <!-- Search -->
   <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url | bust_file_cache }}"></script>
   <ninja-keys hideBreadcrumbs noAutoLoadMdIcons placeholder="Type to start searching"></ninja-keys>
   <script src="{{ '/assets/js/search-setup.js' | relative_url | bust_file_cache }}"></script>
@@ -331,6 +328,7 @@
   <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
+<!-- Newsletter (conditionally loaded) -->
 {% if site.newsletter.enabled %}
   <script defer src="{{ '/assets/js/newsletter.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
