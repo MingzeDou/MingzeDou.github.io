@@ -42,7 +42,14 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:you@example.com", "_blank");
+          window.open("mailto:mingzedou.mail@gmail.com", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/MingzeDou", "_blank");
         },
       },{
         id: 'social-inspire',
@@ -50,6 +57,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://inspirehep.net/authors/1010907", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/mingze-dou-508466279", "_blank");
         },
       },{
         id: 'social-rss',
@@ -66,11 +80,11 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
         },
       },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
+        id: 'social-brainstem',
+        title: 'Brainstem',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://brainstem.org/", "_blank");
         },
       },{
       id: 'light-theme',
