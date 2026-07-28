@@ -75,7 +75,7 @@ nav_order: 2
     </p>
     <p class="project-links">
       <a href="https://www.brainstem.org/">BrainSTEM ↗</a>
-      <a href="https://github.com/brainstem-org/brainstem_support">Documentation and support ↗</a>
+      <a href="https://support.brainstem.org/">Documentation and support ↗</a>
     </p>
     <p class="project-meta">Research data management · documentation · APIs · reproducible workflows</p>
   </article>
