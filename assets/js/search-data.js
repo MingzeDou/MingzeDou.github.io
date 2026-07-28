@@ -11,17 +11,10 @@ ninja.data = [{
     },
   },{id: "nav-projects",
           title: "Projects",
-          description: "Featured projects showcasing my work in neuroscience research and software development.",
+          description: "Research and software projects in systems neuroscience, Neuropixels electrophysiology, and reproducible neural data analysis.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
-          },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "A collection of my GitHub repositories and open-source contributions in neuroscience and data analysis.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
           },
         },{id: "nav-cv",
           title: "CV",
@@ -52,25 +45,11 @@ ninja.data = [{
           window.open("https://github.com/MingzeDou", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
-        },
-      },{
         id: 'social-linkedin',
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/mingze-dou-508466279", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-scholar',
@@ -84,7 +63,7 @@ ninja.data = [{
         title: 'Brainstem',
         section: 'Socials',
         handler: () => {
-          window.open("https://brainstem.org/", "_blank");
+          window.open("https://www.brainstem.org/", "_blank");
         },
       },{
       id: 'light-theme',
