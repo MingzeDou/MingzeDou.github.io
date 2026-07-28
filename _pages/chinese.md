@@ -3,87 +3,57 @@ layout: about
 permalink: /chinese/
 title: 中文
 nav: true
-nav_order: 5
+nav_order: 4
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: mingze-dou-portrait-square.jpg
   image_circular: false
 
 selected_papers: false
-social: false
+social: true
 ---
 
-<!-- 关于我 -->
+<p class="home-kicker">哥本哈根大学 · Petersen Lab</p>
 
-## 关于我
+<p class="home-lead">
+  我研究内侧隔核与海马如何协同支持空间导航、记忆及不同脑状态。
+</p>
 
-我是一名系统神经科学家，致力于探索分布式神经网络如何协同工作以产生适应性行为。我的研究聚焦于海马-隔核系统——这一关键神经回路在空间记忆、时间编码和导航决策中发挥核心作用。
+我是哥本哈根大学系统与计算神经科学博士研究生。我的研究结合双探针 Neuropixels
+电生理记录、行为追踪和神经群体分析，重点关注神经序列与低维群体结构如何在主动行为、
+REM 睡眠和 NREM 睡眠之间变化。
 
-在实验方法上，我采用高密度Neuropixels 2.0技术，在自然行为范式中同步记录内侧隔核与海马区的数百上千个神经元活动。这种多脑区联合记录策略，揭示了神经回路间如何以毫秒级精度动态协调信息处理。此外，我开发了一套覆盖全数据生命周期的计算分析框架：从电生理采集系统与行为信号同步，到高效神经元分拣流程，再到基于Python和MATLAB的机器学习解码算法。
+同时，我使用 Python 和 MATLAB 开发可复现的神经数据处理与分析流程。
 
-作为研究的延伸，我深度参与开放科学（Open Science）的实践与推广。我协助开发了BrainSTEM（brainstem.org）平台，包括技术后端开发与标准化文档撰写，旨在开发一个神经科学协作笔记本。
+<nav class="home-actions" aria-label="主要链接">
+  <a href="{{ '/projects/' | relative_url }}">研究项目 <span aria-hidden="true">→</span></a>
+  <a href="{{ '/cv/' | relative_url }}">个人简历 <span aria-hidden="true">→</span></a>
+  <a href="mailto:mingzedou.mail@gmail.com">联系我 <span aria-hidden="true">↗</span></a>
+</nav>
 
-我很兴奋能够在推进我们对神经计算理解的同时，为神经科学社区构建下一代分析工具。
+## 研究方向
 
----
+<div class="research-grid">
+  <article class="research-card">
+    <p class="focus-label">01 · 神经回路</p>
+    <h3>隔核—海马动力学</h3>
+    <p>在自然导航与睡眠状态中进行双脑区大规模电生理记录。</p>
+  </article>
+  <article class="research-card">
+    <p class="focus-label">02 · 计算分析</p>
+    <h3>神经群体几何</h3>
+    <p>神经序列、状态空间结构、相位组织以及跨脑区耦合。</p>
+  </article>
+  <article class="research-card">
+    <p class="focus-label">03 · 分析方法</p>
+    <h3>可复现数据流程</h3>
+    <p>Neuropixels 预处理、LFP 提取与计算建模工具。</p>
+  </article>
+</div>
 
-<!-- 科研项目 -->
+## 联系方式
 
-## 科研项目 {#projects}
-
-### Neuropixels海马-隔核动力学记录
-
-<span style="font-size:0.95em; color: #888;">2024年8月 – 至今</span>
-
-对自然探索行为中海马-隔核记忆系统内跨区域神经通信的综合研究。
-
-**技术创新与实验设计：**
-
-- 设计了新型双探针记录范式，能够同时捕获解剖连接但功能不同的脑区神经活动
-- 进行了精确Neuropixels 2.0植入的手术，在多个脑区实现同时记录数百神经元的神经信号
-- 将实时行为追踪与高分辨率电生理学相结合，关联毫秒精度的神经事件与空间导航动力学
-
-**计算神经科学与数据科学：**
-
-- 构建端到端分析流水线处理TB级数据集，实现跨区域神经元分拣
-- 应用高级降维技术(PCA、t-SNE、UMAP)识别代表行为状态的群体级神经动力学
-- 使用集成方法开发机器学习解码器，从多脑区神经活动模式预测空间位置和运动意图
-
-**技能：** 高密度电生理学 · 跨区域回路分析 · 行为神经科学 · 机器学习 · 大数据处理
-
----
-
-### BrainSTEM：神经科学协作笔记本
-
-<span style="font-size:0.95em; color: #888;">2024年10月 – 至今</span>
-
-协作开发BrainSTEM，一个神经科学协作笔记本，旨在推动神经科学研究团队记录和分享实验数据。
-
-**开发者文档：**
-
-- 撰写涵盖系统架构、API端点和部署程序的综合技术文档
-- 创建交互式教程和API调用代码示例，展示可重现的工作流程
-
-**平台架构与数据库工程：**
-
-- 参与开发核心数据模型，实现支持复杂神经科学元数据和实验层次结构的强大关系数据库架构
-- 设计可扩展的批处理工具，使研究人员能够通过简化的CSV上传工作流程载入整个实验数据集
-
-<a href="https://brainstem.org" target="_blank">访问 BrainSTEM.org</a>
-
-**技能：** Web开发 · Django · 神经科学
-
----
-
-<!-- 联系方式 -->
-
-## 联系我 {#contact}
-
-无论您对协作研究机会、神经数据分析的技术讨论，还是探索神经技术的创新应用感兴趣，我都很乐意与您联系。
-
-<ul>
-  <li>邮箱: <a href="mailto:mingzedou.mail@gmail.com">mingzedou.mail@gmail.com</a></li>
-  <li>领英: <a href="https://www.linkedin.com/in/mingze-dou-508466279/" target="_blank">mingze-dou-508466279</a></li>
-  <li>GitHub: <a href="https://github.com/MingzeDou" target="_blank">MingzeDou</a></li>
-</ul>
+[电子邮件](mailto:mingzedou.mail@gmail.com) ·
+[Google Scholar](https://scholar.google.com/citations?user=qc6CJjYAAAAJ) ·
+[GitHub](https://github.com/MingzeDou)

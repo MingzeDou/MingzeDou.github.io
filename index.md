@@ -3,78 +3,94 @@ redirect_from: /about/
 permalink: /
 layout: about
 title: Mingze Dou
-subtitle: Systems and Computational Neuroscientist & Software Developer
+subtitle: PhD Researcher · Systems & Computational Neuroscience
 description: >
-  Systems neuroscientist exploring neural circuits using high-density Neuropixels electrophysiology and machine learning. PhD student at University of Copenhagen researching septo-hippocampal dynamics, spatial memory, and navigation. Developer of computational analysis tools for neuroscience research.
+  Mingze Dou is a PhD researcher at the University of Copenhagen studying
+  septo-hippocampal neural dynamics with Neuropixels electrophysiology,
+  computational modelling, and reproducible scientific software.
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: mingze-dou-portrait-square.jpg
   image_circular: false
 
 selected_papers: false
-social: false
+social: true
 ---
 
-<!-- About Me Section -->
-## About Me
-I am a systems neuroscientist dedicated to exploring how distributed neural networks coordinate to produce adaptive behaviors. My research focuses on the septo-hippocampal system—a key neural circuit that plays a central role in spatial memory, temporal coding, and navigational decision-making.
+<p class="home-kicker">Petersen Lab · University of Copenhagen</p>
 
-In my experimental approach, I employ high-density Neuropixels 2.0 technology to simultaneously record hundreds to thousands of neuronal activities from the medial septum and hippocampus during naturalistic behavioral paradigms. This multi-region recording strategy reveals how neural circuits dynamically coordinate information processing with millisecond precision. Additionally, I have developed a comprehensive computational analysis framework covering the entire data lifecycle: from electrophysiological acquisition systems and behavioral signal synchronization, to efficient spike sorting pipelines, and machine learning decoding algorithms based on Python and MATLAB.
+<p class="home-lead">
+  I study how the medial septum and hippocampus coordinate navigation, memory,
+  and internal brain state.
+</p>
 
-As an extension of my research, I am deeply involved in the practice and promotion of Open Science. I have assisted in developing the BrainSTEM platform (brainstem.org), including technical backend development and standardized documentation writing, aimed at creating an online neuroscience notebook.
+My work combines simultaneous Neuropixels recordings, behavioral tracking, and
+population-level analysis. I am especially interested in how neural sequences
+and low-dimensional structure change between active behavior, REM sleep, and
+NREM sleep.
 
-I am excited to advance our understanding of neural computation while building next-generation analytical tools for the neuroscience community.
+I also build reproducible Python and MATLAB workflows for processing and
+interpreting large-scale electrophysiology data.
 
----
+<nav class="home-actions" aria-label="Primary links">
+  <a href="{{ '/projects/' | relative_url }}">View research <span aria-hidden="true">→</span></a>
+  <a href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">→</span></a>
+  <a href="mailto:mingzedou.mail@gmail.com">Get in touch <span aria-hidden="true">↗</span></a>
+</nav>
 
-<!-- Featured Projects Section -->
-## Projects {#projects}
+## Research
 
-### Neuropixels Recording of Septo-Hippocampal Dynamics
-<span style="font-size:0.95em; color: #888;">Aug 2024 – Present</span>
+<div class="research-grid">
+  <article class="research-card">
+    <p class="focus-label">01 · Circuits</p>
+    <h3>Septo-hippocampal dynamics</h3>
+    <p>Dual-region electrophysiology during naturalistic navigation and sleep.</p>
+  </article>
+  <article class="research-card">
+    <p class="focus-label">02 · Computation</p>
+    <h3>Population geometry</h3>
+    <p>Neural sequences, state-space structure, phase organization, and cross-region coupling.</p>
+  </article>
+  <article class="research-card">
+    <p class="focus-label">03 · Methods</p>
+    <h3>Reproducible analysis</h3>
+    <p>Practical pipelines for Neuropixels preprocessing, LFP extraction, and modelling.</p>
+  </article>
+</div>
 
-A comprehensive investigation into cross-regional neural communication within the septo-hippocampal memory system during naturalistic exploratory behaviors.
+## Selected work
 
-**Technical Innovation & Experimental Design:**
-- Designed a novel dual-probe recording paradigm enabling simultaneous capture of neural activity from anatomically connected but functionally distinct brain regions
-- Performed precise Neuropixels 2.0 implantation surgeries, achieving simultaneous recording of hundreds of neuronal signals across multiple brain areas
-- Integrated real-time behavioral tracking with high-resolution electrophysiology to correlate millisecond-precise neural events with spatial navigation dynamics
+<div class="work-list">
+  <article class="work-row">
+    <div>
+      <p class="focus-label">Current PhD research</p>
+      <h3>Population dynamics across RUN, REM, and NREM</h3>
+    </div>
+    <p>Testing how spatial and temporal population structure persists or transforms across behavioral state.</p>
+    <a href="{{ '/projects/' | relative_url }}" aria-label="Read about population dynamics research">Details →</a>
+  </article>
 
-**Computational Neuroscience & Data Science:**
-- Architected end-to-end analytical pipelines processing terabyte-scale datasets, implementing cross-regional spike sorting algorithms
-- Applied advanced dimensionality reduction techniques (PCA, t-SNE, UMAP) to identify population-level neural dynamics representing behavioral states
-- Developed machine learning decoders using ensemble methods to predict spatial position and movement intention from multi-region neural activity patterns
+  <article class="work-row">
+    <div>
+      <p class="focus-label">Scientific software</p>
+      <h3>Neuropixels analysis tooling</h3>
+    </div>
+    <p>Kilosort 4 orchestration, channel mapping, LFP extraction, and validation for laboratory workflows.</p>
+    <a href="https://github.com/petersen-lab/kilosort4Wrapper" aria-label="View the Kilosort wrapper on GitHub">GitHub ↗</a>
+  </article>
 
-**Skills:** High-Density Electrophysiology · Cross-Regional Circuit Analysis · Behavioral Neuroscience · Machine Learning · Big Data Processing
+  <article class="work-row brainstem-row">
+    <div>
+      <p class="focus-label">Open science</p>
+      <h3><img src="{{ '/assets/img/brainstem-logo.svg' | relative_url }}" alt="" class="brainstem-mark">BrainSTEM</h3>
+    </div>
+    <p>Infrastructure for organizing neuroscience experiments, metadata, and reproducible workflows.</p>
+    <a href="https://www.brainstem.org/" aria-label="Visit BrainSTEM">Visit ↗</a>
+  </article>
+</div>
 
----
+## Contact
 
-### BrainSTEM: Collaborative Infrastructure for Computational Neuroscience
-<span style="font-size:0.95em; color: #888;">Oct 2024 – Present</span>
-
-Collaborated in developing BrainSTEM, an online neuroscience notebook aimed at promoting neuroscience research teams to document and share experimental data.
-
-**Developer Experience & Documentation:**
-- Authored comprehensive technical documentation covering system architecture, API endpoints, and deployment procedures
-- Created interactive tutorials and API usage code examples demonstrating best practices for reproducible computational neuroscience workflows
-
-**Platform Architecture & Database Engineering:**
-- Participated in developing core data models, implementing robust relational database schemas supporting complex neuroscience metadata and experimental hierarchies
-- Engineered scalable batch-processing tools enabling researchers to onboard entire experimental datasets through streamlined CSV upload workflows
-
-<a href="https://brainstem.org" target="_blank">Visit BrainSTEM.org</a>
-
-**Skills:** Web Development · Django · Neuroscience
-
----
-
-<!-- Contact Section -->
-## Get In Touch {#contact}
-Whether you're interested in collaborative research opportunities, technical discussions about neural data analysis, or exploring innovative applications of neurotechnology, I'd love to connect.
-
-<ul>
-  <li>Email: <a href="mailto:mingzedou.mail@gmail.com">mingzedou.mail@gmail.com</a></li>
-  <li>LinkedIn: <a href="https://www.linkedin.com/in/mingze-dou-508466279/" target="_blank">mingze-dou-508466279</a></li>
-  <li>GitHub: <a href="https://github.com/MingzeDou" target="_blank">MingzeDou</a></li>
-</ul>
+For research, software, or collaboration enquiries, write to
+[mingzedou.mail@gmail.com](mailto:mingzedou.mail@gmail.com).

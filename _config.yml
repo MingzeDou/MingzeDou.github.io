@@ -7,13 +7,12 @@ first_name: Mingze
 middle_name: 
 last_name: Dou
 contact_note: >
-  Feel free to reach out via email.
+  PhD researcher in systems and computational neuroscience at the University of Copenhagen.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Systems and Computational Neuroscientist & Software Developer. Exploring neural circuits using high-density electrophysiology and machine learning. PhD student at University of Copenhagen researching septo-hippocampal dynamics and memory systems.
+  Mingze Dou is a PhD researcher studying septo-hippocampal neural dynamics with Neuropixels electrophysiology, computational modelling, and reproducible scientific software.
 footer_text: >
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: neuroscience, computational neuroscience, electrophysiology, machine learning, neuropixels, hippocampus, septum, memory, spatial navigation, systems neuroscience, PhD, research, Copenhagen, BrainSTEM # add your own keywords or leave empty
+  © Mingze Dou.
+keywords: systems neuroscience, computational neuroscience, electrophysiology, Neuropixels, hippocampus, medial septum, neural population dynamics, sleep, spatial navigation, scientific software, Copenhagen, BrainSTEM
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -46,7 +45,7 @@ repo_trophies:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
@@ -64,7 +63,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true # Include Open Graph meta tags in the HTML head
 serve_schema_org: true # Include Schema.org in the HTML head
-og_image: /assets/img/prof_pic.jpg # The site-wide (default for all links) Open Graph preview image
+og_image: /assets/img/mingze-dou-portrait-square.jpg # The site-wide Open Graph preview image
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
